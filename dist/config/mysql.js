@@ -13,8 +13,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const promise_1 = __importDefault(require("mysql2/promise"));
-const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
 const dbConfig = {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 7696,
@@ -34,7 +32,7 @@ function dbConnection() {
                 console.error("Error al conectar a la base de datos:", error);
                 console.log("Reintentando conexión en 2 segundos...");
                 yield new Promise((resolve) => setTimeout(resolve, 2000));
-                return dbConnection();
+                return dbConnection(); // Esto puede causar problemas, revisa la lógica de reintentar la conexión
             }
             else {
                 throw error;
