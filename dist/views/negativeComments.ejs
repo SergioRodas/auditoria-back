@@ -1,0 +1,46 @@
+<%- include('partials/head', {
+    title: 'Comentarios negativos',
+    additionalStyles: ['/css/negativeComments.css']
+}) %>
+<%- include('partials/navbar',
+{
+    username: username,
+    name,
+}) %>
+
+    <div class="negative-comments-container">
+        <h1>Comentarios negativos</h1>
+        <div class="date-container" id="date-container">
+            <label for="date">Seleccione una fecha:</label>
+            <div class="date-wrapper">
+                <input type="text" id="date" name="date" readonly>
+                <img src="/images/icons/calendar.svg" alt="calendar" class="calendar" id="calendar-icon">
+            </div>
+        </div>
+        <div id="loader" class="loader"></div>
+        <table id="negative-comments" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Medio</th>
+                    <th>Fecha</th>
+                    <th>Clave</th>
+                    <th>Autor (editable)</th>
+                    <th>Programa (editable)</th>
+                    <th>Cadena (editable)</th>
+                    <th>Testigo</th>
+                    <th>Texto completo</th>
+                    <th>Mención negativa (editable)</th>
+                    <th>Publicado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="/js/negativeComments.js"></script>
+</body>
+</html>

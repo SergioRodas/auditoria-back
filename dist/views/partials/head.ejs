@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/images/balls.png" />
+    <title>Admin | <%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <% if (additionalStyles && Array.isArray(additionalStyles)) { %>
+        <% additionalStyles.forEach(style => { %>
+            <link rel="stylesheet" href="<%= style %>">
+        <% }) %>
+    <% } %>
+</head>
+<body>

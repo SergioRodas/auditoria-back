@@ -102,5 +102,5 @@ app.listen(PORT, async () => {
     console.log(
         `Servidor GraphQL listo en http://localhost:${PORT}${server.graphqlPath}`
     );
-    server.applyMiddleware({ app });
+    server.applyMiddleware({ app: app as any });
 });

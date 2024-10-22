@@ -1,0 +1,23 @@
+<%- include('partials/head', {
+    title: 'Home',
+    additionalStyles: ['/css/home.css']
+}) %>
+<%- include('partials/navbar',
+{
+    username: username,
+    name,
+}) %>
+    <div class="home-container">
+        <h1>Panel de administrador de <span>Auditoría Mediática</span></h1>
+        <h2>Explorar:</h2>
+        <div class="links-container">
+            <a href="/export-by-valuation" class="page-link">Exportación por valoración</a>
+            <a href="/negative-comments" class="page-link">Comentarios negativos</a>
+            <a href="/daily-balance" class="page-link">Balance del día</a>
+        </div>
+    </div>
+
+    <script src="/js/home.js"></script>
+</body>
+</html>
+

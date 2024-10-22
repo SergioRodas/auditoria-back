@@ -1,0 +1,40 @@
+.negative-comments-container {
+    margin: 30px;
+    h1 {
+        text-align: center;
+    }
+    #negative-comments_wrapper {
+        overflow: auto;
+    }
+    thead, tfoot {
+        font-size: 14px;
+    }
+    tbody {
+        font-size: 13px;
+
+        .table-cell{
+            max-height: 80px;
+            overflow: auto;
+        }
+        .captexcomp {
+            min-width: 300px;
+        }
+        .autor {
+            min-width: 150px;
+        }
+        .fecha{
+            min-width: 80px;
+        }
+        .auditoria_mencion {
+            min-width: 200px;
+            max-width: 300px;
+        }
+        .programa {
+            min-width: 150px;
+        }
+        .programGroup {
+            min-width: 150px;
+            max-width: 200px;
+        }
+    }
+}

@@ -1,0 +1,218 @@
+@import 'colors.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+  
+.site-navbar {
+    position: sticky;
+    top: 0;
+    height: 60px;
+    background-color: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 2px 8px 0px #00000014;
+    z-index: 999;
+
+    .navbar-logo {
+      height: 38px;
+      margin-left: 70px;  
+    }
+    .user-profile {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        .profile-name {
+            color: var(--secondary-color);
+            font-size: 18px;
+        }
+
+        .logout-icon-container {
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+        }
+    }
+    .navbar-links {
+        display: flex;
+    }
+    
+    .navbar-link {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-right: 20px;
+        color: var(--black);
+        text-decoration: none;
+    }
+    .selected-link {
+        color: var(--blue);
+    }
+    
+    .navbar-link:hover {
+        color: var(--blue);
+    }
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+    display: none;
+}
+
+#datepicker {
+    display: none;
+}
+
+.date-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+    .date-wrapper {
+        position: relative;
+        display: inline-block;
+    }
+    label[for="date"] {
+        margin-right: 30px;
+    }
+    #date {
+        background-color: transparent;
+        padding: 8px 15px;
+        width: 245px;
+        font-size: 16px;
+        text-align: center;
+    }
+    #calendar-icon {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+    .date-wrapper:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 0;
+    }
+    #date {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (min-width: 320px) and (max-width: 424px){
+    .site-navbar {
+        width: fit-content;
+        .navbar-logo {
+            height: 25px;
+            margin-left: 5px;
+        }
+        .user-profile {
+            gap: 4px;
+            margin-right: 20px;
+            .profile-name {
+                font-size: 12px;
+            }
+            .logout-icon-container {
+                height: 20px;
+                width: 20px;
+            }
+            .logout-icon{
+                height: 18px;
+            }
+        }
+        .navbar-link {
+            font-size: 12px;
+            margin: 10px;
+        }
+    }
+}
+
+@media (min-width: 425px) and (max-width: 700px){
+    .site-navbar {
+        width: fit-content;
+        min-width: 100%;
+        .navbar-logo {
+            height: 25px;
+            margin: 10px;
+        }
+        .user-profile {
+            gap: 4px;
+            margin-right: 20px;
+            .profile-name {
+                font-size: 14px;
+            }
+            .logout-icon-container {
+                height: 20px;
+                width: 20px;
+            }
+            .logout-icon{
+                height: 18px;
+            }
+        }
+        .navbar-link {
+            font-size: 15px;
+            margin: 10px;
+        }
+    }
+}
+
+@media (min-width: 701px) and (max-width: 900px){
+    .site-navbar {
+        width: auto;
+        .navbar-logo {
+            height: 30px;
+            margin-left: 20px;
+        }
+        .user-profile {
+            gap: 4px;
+            margin-right: 20px;
+            .profile-name {
+                font-size: 18px;
+            }
+            .logout-icon-container {
+                height: 20px;
+                width: 20px;
+            }
+            .logout-icon{
+                height: 18px;
+            }
+        }
+        .navbar-link {
+            font-size: 17px;
+            margin: 10px;
+        }
+    }
+}

@@ -12,18 +12,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-process.setMaxListeners(20);
-const loginServices_1 = __importDefault(require("../services/loginServices"));
-const loginResolver = {
+const interviewService_1 = __importDefault(require("../../services/interviews/interviewService"));
+const interviewResolver = {
     Query: {
-        login: (_, args) => __awaiter(void 0, void 0, void 0, function* () {
-            const { alias, password } = args;
-            const user = yield loginServices_1.default.findUserByCredentials(alias, password);
-            if (!user) {
-                throw new Error("Usuario o contraseña incorrectos");
+        interviewResolver: (_1, _a, _context_1) => __awaiter(void 0, [_1, _a, _context_1], void 0, function* (_, { fecha, semanal }, _context) {
+            try {
+                const rows = yield interviewService_1.default.getInterviews(fecha, semanal);
+                const interviewsByCandidate = yield interviewService_1.default.processInterviews(rows);
+                return interviewsByCandidate;
             }
-            return user;
+            catch (error) {
+                throw new Error(`Error al ejecutar la consulta: ${error.message}`);
+            }
         }),
     },
 };
-exports.default = loginResolver;
+exports.default = interviewResolver;
