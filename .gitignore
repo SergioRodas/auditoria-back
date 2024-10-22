@@ -3,7 +3,6 @@
 
 # Ignorar el directorio node_modules
 node_modules/
-dist/
 .vscode
 *.xlsx
 *.xlsx#
