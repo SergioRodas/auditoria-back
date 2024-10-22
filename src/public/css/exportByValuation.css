@@ -1,0 +1,86 @@
+.export-by-valuation-container {
+    margin: 30px;
+
+    h1 {
+        text-align: center;
+    }
+    .date-and-download-btn-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    .btn-download-excel-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .btn-download-excel {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+
+            img {
+                margin-left: 10px;
+            }
+        }
+        
+        .btn-download-excel:hover {
+            background-color: #45a049;
+        }
+        
+        .btn-download-excel:active {
+            background-color: #3e8e41;
+        }
+    }
+    #valuation-info_wrapper {
+        overflow: auto;
+    }
+    thead, tfoot {
+        font-size: 14px;
+    }
+    tbody {
+        font-size: 13px;
+
+        .table-cell{
+            max-height: 80px;
+            overflow: auto;
+        }
+
+        .FECHA {
+            min-width: 80px;
+        }
+        .FTECONDUCTOR, .FRESIGLAS, .MUNNOMMUNICIPIO, .QUERY {
+            min-width: 120px;
+        }
+        .QUERY, .QUERYHIJO, .USRNOMBRE, .TEXNOMBRE, .QUENOMBRE {
+            min-width: 150px;
+        }
+        .CAPTITULO {
+            min-width: 200px;
+        }
+        .CAPTEXTCOMP {
+            min-width: 350px;
+        }
+    }
+    .delete-valution-btn {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #da4860;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,46 @@
+<%- include('partials/head', {
+    title: 'Exportación por valoración',
+    additionalStyles: ['/css/exportByValuation.css']
+}) %>
+<%- include('partials/navbar',
+{
+    username: username,
+    name,
+}) %>
+
+    <div class="export-by-valuation-container">
+        <h1>Exportación por valoración</h1>
+        <div class="date-and-download-btn-container" id="date-and-download-btn-container">
+            <div class="date-container" id="date-container">
+                <label for="date">Seleccione una fecha:</label>
+                <div class="date-wrapper">
+                    <input type="text" id="date" name="date" readonly>
+                    <img src="/images/icons/calendar.svg" alt="calendar" class="calendar" id="calendar-icon">
+                </div>
+            </div>
+            <div class="btn-download-excel-container">
+                <button class="btn-download-excel">Descargar Excel
+                    <img src="/images/icons/download.svg" alt="download-excel" class="download-excel" id="download-excel-icon">
+                </button>
+            </div>
+        </div>
+        <div id="loader" class="loader"></div>
+        <table id="valuation-info" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <% dataTableData.columns.forEach(column => { %>
+                        <th><%= column %></th>
+                    <% }); %>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="/js/exportByValuation.js"></script>
+</body>
+</html>

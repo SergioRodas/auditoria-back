@@ -1,0 +1,40 @@
+.daily-balance-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+
+    h1 {
+        text-align: center;
+    }
+
+    .daily-balance-editor {
+        margin-bottom: 20px;
+        font-size: 16px;
+        
+        .ck-editor {
+            margin-bottom: 20px;
+        }
+    }
+
+
+    .daily-balance-btn {
+        display: flex;
+        justify-content: center;
+
+        .save-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .save-button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    }
+    
+}

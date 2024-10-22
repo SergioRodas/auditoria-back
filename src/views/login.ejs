@@ -1,0 +1,39 @@
+<%- include('partials/head', {
+    title: 'Login',
+    additionalStyles: ['/css/login.css']
+}) %>
+<%- include('partials/navbar',
+{
+    username: null
+}) %>
+
+<div class="login-container">
+    <div class="login-form-container">
+        <h1 class="login-title">Auditoría Mediática</h1>
+        <h2 class="login-subtitle">Bienvenido de vuelta, por favor, ingresa a tu cuenta.</h2>
+        <form action="/login" method="POST" class="login-form" novalidate>
+            <div class="form-group">
+                <label for="username">Usuario</label>
+                <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required>
+                <span id="username-error" class="input-error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <div class="password-input">
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                    <img src="/images/icons/eye-off.svg" alt="eye-off" class="password-toggle-icon" id="password-toggle">
+                </div>
+                <span id="password-error" class="input-error-message"></span>
+            </div>
+            <div class="forgot-password">
+                <a href="/">Olvidé mi contraseña</a>
+            </div>
+            <button type="submit" class="btn-login">Ingresar</button>
+            <span id="login-error" class="login-error-message"></span>
+        </form>
+    </div>
+    <div class="login-images-container"></div>
+</div>
+<script src="/js/login.js"></script>
+</body>
+</html>

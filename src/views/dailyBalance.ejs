@@ -1,0 +1,32 @@
+<%- include('partials/head', {
+    title: 'Balance del día',
+    additionalStyles: ['/css/dailyBalance.css']
+}) %>
+<%- include('partials/navbar',
+{
+    username: username,
+    name,
+}) %>
+
+    <div class="daily-balance-container">
+        <h1>Balance del día</h1>
+        <div class="date-container" id="date-container">
+            <label for="date">Seleccione una fecha:</label>
+            <div class="date-wrapper">
+                <input type="text" id="date" name="date" readonly>
+                <img src="/images/icons/calendar.svg" alt="calendar" class="calendar" id="calendar-icon">
+            </div>
+        </div>
+        <div id="loader" class="loader"></div>
+        <div class="daily-balance-editor" id="daily-balance-editor">
+            <textarea id="balance-editor"></textarea>
+            <div class="daily-balance-btn">
+                <button id="save-button" class="save-button" disabled>Guardar</button>
+            </div>
+        </div>
+    </div>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+<script src="/js/dailyBalance.js"></script>
+</body>
+</html>

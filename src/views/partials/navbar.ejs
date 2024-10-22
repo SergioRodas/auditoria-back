@@ -1,0 +1,21 @@
+<nav class="site-navbar">
+    <a href="/">
+        <img src="/images/logo_intelite.png" class="navbar-logo" alt="Logo Intelite">
+    </a>
+    <% if (typeof username !== 'undefined' && username) { %>
+        <div class="navbar-links">
+            <a href="/export-by-valuation" class="navbar-link <%= name === 'exportByValuation' ? 'selected-link' : '' %>">Valoración</a>
+            <a href="/negative-comments" class="navbar-link <%= name === 'negativeComments' ? 'selected-link' : '' %>">Comentarios negativos</a>
+            <a href="/daily-balance" class="navbar-link <%= name === 'dailyBalance' ? 'selected-link' : '' %>">Balance diario</a>
+        </div>
+        <div class="user-profile">
+            <span class="profile-name"><%= username %></span>
+            <div class="logout-icon-container">
+                <a href="/logout">
+                    <img src="/images/icons/logout.svg" alt="logout" class="logout-icon" id="logout-icon">
+                </a>
+            </div>
+        </div>
+    <% } %>
+    
+</nav>

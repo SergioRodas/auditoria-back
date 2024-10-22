@@ -1,0 +1,11 @@
+# Ignorar el archivo .env
+.env
+
+# Ignorar el directorio node_modules
+node_modules/
+dist/
+package-lock.json
+.vscode
+*.xlsx
+*.xlsx#
+test/
